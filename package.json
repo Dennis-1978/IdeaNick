@@ -1,5 +1,20 @@
 {
-    "name": "ideanick",
-    "private": true,
-    "version": "0.0.0"
+  "name": "ideanick",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "b": "pnpm --filter @ideanick/backend",
+    "w": "pnpm --filter @ideanick/webapp",
+    "types": "concurrently 'pnpm b types' 'pnpm w types'",
+    "prettify": "prettier --loglevel warn --cache --write '{ideanick/**/*,*}.{json,yml,yaml}' '!**/{node_modules,dist}/**/*'",
+    "prettify all": "pnpm -r --parallel prettify"
+  },
+  "devDependencies": {
+    "concurrently": "8.2.0",
+    "prettier": "3.0.1",
+    "rimraf": "5.0.1",
+    "ts-node": "10.9.1",
+    "ts-node-dev": "2.0.0",
+    "typescript": "5.1.6"
+  }
 }
