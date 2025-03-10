@@ -6,11 +6,19 @@
     "b": "pnpm --filter @ideanick/backend",
     "w": "pnpm --filter @ideanick/webapp",
     "types": "concurrently 'pnpm b types' 'pnpm w types'",
-    "prettify": "prettier --loglevel warn --cache --write '{ideanick/**/*,*}.{json,yml,yaml}' '!**/{node_modules,dist}/**/*'",
-    "prettify all": "pnpm -r --parallel prettify"
+    "prettify": "prettier --log-level warn --cache --write '*.{json,yml,yaml}' '!**/{node_modules,dist}/**/*'",
+    "prettify:all": "pnpm -r --parallel prettify"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "6.0.0",
+    "@typescript-eslint/parser": "6.0.0",
     "concurrently": "8.2.0",
+    "eslint": "8.47.0",
+    "eslint-config-prettier": "9.0.0",
+    "eslint-config-react-app": "7.0.1",
+    "eslint-config-standard-with-typescript": "37.0.0",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "eslint-plugin-react-refresh": "0.4.3",
     "prettier": "3.0.1",
     "rimraf": "5.0.1",
     "ts-node": "10.9.1",
