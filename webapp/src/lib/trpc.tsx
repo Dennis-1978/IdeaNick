@@ -14,6 +14,7 @@ const queryClient = new QueryClient({
   },
 });
 
+console.log(trpc);
 const trpcClient = trpc.createClient({
   links: [
     httpBatchLink({
