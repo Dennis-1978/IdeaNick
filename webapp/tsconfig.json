@@ -1,11 +1,17 @@
 {
   "compilerOptions": {
     "paths": {
-      "@ideanick/backend": ["../backend/src/index.ts"]
+      "@ideanick/backend": [
+        "../backend/src/index.ts"
+      ]
     },
     "target": "ES2022",
     "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "lib": [
+      "ES2020",
+      "DOM",
+      "DOM.Iterable"
+    ],
     "module": "ESNext",
     "skipLibCheck": true,
     /* Bundler mode */
@@ -23,7 +29,10 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src"],
+  "include": [
+    "src",
+    "vite.config.ts"
+  ],
   "references": [
     {
       "path": "./tsconfig.node.json"

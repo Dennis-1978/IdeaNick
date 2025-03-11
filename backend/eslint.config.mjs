@@ -1,17 +1,18 @@
-import tsPlugin from '@typescript-eslint/eslint-plugin';
-import tsParser from '@typescript-eslint/parser';
 import eslint from '@eslint/js';
+import tsParser from '@typescript-eslint/parser';
+import tsPlugin from '@typescript-eslint/eslint-plugin';
 import globals from 'globals';
 
 export default [
   eslint.configs.recommended,
-
   {
-    files: ['**/*.ts', '**/*.tsx'],
+    files: ['**/*.ts'],
     languageOptions: {
       parser: tsParser,
       parserOptions: {
-        project: true,
+        project: './tsconfig.json',
+        ecmaVersion: 'latest',
+        sourceType: 'module',
       },
       globals: {
         ...globals.node,
@@ -21,20 +22,21 @@ export default [
       '@typescript-eslint': tsPlugin,
     },
     rules: {
-      semi: ['error', 'always'],
-      '@typescript-eslint/semi': ['error', 'always'],
-      'comma-dangle': ['error', 'always-multiline'],
       '@typescript-eslint/comma-dangle': ['error', 'always-multiline'],
+      '@typescript-eslint/semi': ['error', 'always'],
+      semi: 'off',
+      'comma-dangle': 'off',
       '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/no-unused-vars': 'error',
-      'no-undef': 'off',
+      'no-console': [
+        'error',
+        {
+          allow: ['info', 'error', 'warn'],
+        },
+      ],
     },
   },
   {
-    languageOptions: {
-      ecmaVersion: 'latest',
-      sourceType: 'module',
-    },
-    ignores: ['node_modules/', 'dist/'],
+    ignores: ['node_modules/', 'dist/', '**/*.d.ts', '.eslintrc.*'],
   },
 ];
