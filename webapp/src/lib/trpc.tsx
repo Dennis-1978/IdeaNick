@@ -5,6 +5,8 @@ import type { TrpcRouter } from '@ideanick/backend/src/trpc';
 
 export const trpc = createTRPCReact<TrpcRouter>();
 
+const x: string = 1;
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
