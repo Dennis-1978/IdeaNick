@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
-import { trpc } from '../../lib/trpc';
+
 import { getViewIdeaRoute } from '../../lib/routes';
+import { trpc } from '../../lib/trpc';
+
 import css from './index.module.scss';
 
 export function AllIdeasPage() {

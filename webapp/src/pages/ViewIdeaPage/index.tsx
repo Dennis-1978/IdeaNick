@@ -1,6 +1,8 @@
 import { useParams } from 'react-router-dom';
+
 import { ViewIdeaRouteParams } from '../../lib/routes';
 import { trpc } from '../../lib/trpc';
+
 import css from './index.module.scss';
 
 export const ViewIdeaPage = () => {

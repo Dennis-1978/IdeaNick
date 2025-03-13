@@ -1,5 +1,7 @@
 import { Link, Outlet } from 'react-router-dom';
+
 import { getAllIdeasRoute, getNewIdeaRoute } from '../../lib/routes';
+
 import css from './index.module.scss';
 
 export const Layout = () => {
