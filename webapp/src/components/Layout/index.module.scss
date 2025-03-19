@@ -1,6 +1,6 @@
+@use 'include-media/dist/include-media' as media;
 @use '../../styles/mixins' as mixins;
 @use '../../styles/variables' as vars;
-@use 'include-media' as media;
 
 .layout {
   display: flex;
