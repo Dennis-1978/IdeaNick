@@ -10,6 +10,7 @@ export const TextArea = ({
   formik: FormikProps<any>;
 }) => {
   const value = formik.values[name];
+  const error = formik.errors[name] as string | undefined;
 
   return (
     <div style={{ marginBottom: 10 }}>
@@ -23,6 +24,7 @@ export const TextArea = ({
         name={name}
         id={name}
       />
+      {error && <div style={{ color: 'red' }}>{error}</div>}
     </div>
   );
 };
