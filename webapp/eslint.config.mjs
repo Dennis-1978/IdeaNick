@@ -80,7 +80,7 @@ export default [
             {
               group: [
                 '@ideanick/backend/**',
-                '!@ideanick/backend/**',
+                '!@ideanick/backend/**/',
                 '!@ideanick/backend/**/input',
               ],
               message: 'Only types and input schemas are allowed from backend',
