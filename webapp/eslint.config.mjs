@@ -76,17 +76,19 @@ export default [
       '@typescript-eslint/no-restricted-imports': [
         'error',
         {
-          // Базовое правило для всех бэкенд-импортов
-          name: '@ideanick/backend/**',
-          allowTypeImports: true,
-          message:
-            'Only types and input schemas are allowed to be imported from backend workspace',
-        },
-        {
-          // Исключение для конкретного экспорта 'input'
-          name: '@ideanick/backend/**/input',
-          importNames: ['input'],
-          allowTypeImports: true,
+          paths: [
+            {
+              name: '@ideanick/backend/**',
+              allowTypeImports: true,
+              message: 'Only types and input schemas are allowed from backend',
+              allow: [
+                {
+                  name: '@ideanick/backend/**/input',
+                  importNames: ['zCreateIdeaTrpcInput'],
+                },
+              ],
+            },
+          ],
         },
       ],
     },
