@@ -86,6 +86,10 @@ export default [
               message: 'Only types and input schemas are allowed from backend',
               allowTypeImports: true,
             },
+            {
+              group: ['@ideanick/backend/**/!(*input)*'],
+              message: 'Non-input backend imports are prohibited',
+            },
           ],
         },
       ],
