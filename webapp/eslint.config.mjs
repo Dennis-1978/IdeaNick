@@ -76,17 +76,15 @@ export default [
       '@typescript-eslint/no-restricted-imports': [
         'error',
         {
-          paths: [
+          patterns: [
             {
-              name: '@ideanick/backend/**',
-              allowTypeImports: true,
-              message: 'Only types and input schemas are allowed from backend',
-              allow: [
-                {
-                  name: '@ideanick/backend/**/input',
-                  importNames: ['zCreateIdeaTrpcInput'],
-                },
+              group: [
+                '@ideanick/backend/**',
+                '!@ideanick/backend/**',
+                '!@ideanick/backend/**/input',
               ],
+              message: 'Only types and input schemas are allowed from backend',
+              allowTypeImports: true,
             },
           ],
         },

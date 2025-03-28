@@ -8,10 +8,10 @@ import { Segment } from '../../components/Segment';
 import { TextArea } from '../../components/TextArea';
 import { trpc } from '../../lib/trpc';
 
-console.info(x123);
-
 export const NewIdeaPage = () => {
   const createIdea = trpc.createIdea.useMutation();
+
+  console.info(x123);
 
   const formik = useFormik({
     initialValues: {
