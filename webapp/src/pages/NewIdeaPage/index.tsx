@@ -1,4 +1,3 @@
-import { x123 } from '@ideanick/backend/src/router/createIdea';
 import { zCreateIdeaTrpcInput } from '@ideanick/backend/src/router/createIdea/input';
 import { useFormik } from 'formik';
 import { withZodSchema } from 'formik-validator-zod';
@@ -10,8 +9,6 @@ import { trpc } from '../../lib/trpc';
 
 export const NewIdeaPage = () => {
   const createIdea = trpc.createIdea.useMutation();
-
-  console.info(x123);
 
   const formik = useFormik({
     initialValues: {
