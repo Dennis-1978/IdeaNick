@@ -17,7 +17,7 @@ export const TextArea = ({
     <div style={{ marginBottom: 10 }}>
       <label htmlFor={name}>{label}</label>
       <br />
-      <input
+      <textarea
         onChange={(e) => {
           void formik.setFieldValue(name, e.target.value);
         }}
