@@ -3,6 +3,7 @@ import { useFormik } from 'formik';
 import { withZodSchema } from 'formik-validator-zod';
 import { useState } from 'react';
 
+import { Alert } from '../../components/Alert';
 import { Input } from '../../components/Input';
 import { Segment } from '../../components/Segment';
 import { TextArea } from '../../components/TextArea';
@@ -59,12 +60,8 @@ export const NewIdeaPage = () => {
         {!formik.isValid && !!formik.submitCount && (
           <div style={{ color: 'red' }}>Some fields are invalid</div>
         )}
-        {!!submittingError && (
-          <div style={{ color: 'red' }}>{submittingError}</div>
-        )}
-        {succesMessageVisible && (
-          <div style={{ color: 'teal' }}>Idea created!</div>
-        )}
+        {!!submittingError && <Alert color={'red'}>{submittingError}</Alert>}
+        {succesMessageVisible && <Alert color={'green'}>Idea created!</Alert>}
         <button type="submit" disabled={formik.isSubmitting}>
           {formik.isSubmitting ? 'Submitting...' : 'Create Idea'}
         </button>
