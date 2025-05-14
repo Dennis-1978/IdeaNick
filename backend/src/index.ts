@@ -14,7 +14,7 @@ void (async () => {
 
     expressApp.use(cors());
 
-    applyTrpcToExpressApp(expressApp, ctx, trpcRouter);
+    await applyTrpcToExpressApp(expressApp, ctx, trpcRouter);
 
     expressApp.listen(3000, () => {
       console.info('Listening at http://localhost:3000');
