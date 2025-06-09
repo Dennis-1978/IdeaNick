@@ -30,6 +30,21 @@ export default [
       import: importPlugin,
     },
     rules: {
+      'no-restricted-syntax': [
+        'error',
+        {
+          selector:
+            'MemberExpression[object.meta.property.name="meta"][property.name="env"]',
+          message:
+            'Direct use of import.meta.env is prohibited. Use the configuration module.',
+        },
+        {
+          selector:
+            'MemberExpression[object.property.name="meta"][property.name="env"]',
+          message:
+            'Direct use of import.meta.env is prohibited. Use the configuration module.',
+        },
+      ],
       '@typescript-eslint/comma-dangle': ['error', 'always-multiline'],
       '@typescript-eslint/semi': ['error', 'always'],
       'react/jsx-uses-vars': 'error',
