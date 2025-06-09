@@ -2,6 +2,7 @@ import eslint from '@eslint/js';
 import tsParser from '@typescript-eslint/parser';
 import tsPlugin from '@typescript-eslint/eslint-plugin';
 import globals from 'globals';
+import nodePlugin from 'eslint-plugin-node';
 
 export default [
   eslint.configs.recommended,
@@ -20,8 +21,10 @@ export default [
     },
     plugins: {
       '@typescript-eslint': tsPlugin,
+      node: nodePlugin,
     },
     rules: {
+      'node/no-process-env': 'error',
       '@typescript-eslint/comma-dangle': ['error', 'always-multiline'],
       '@typescript-eslint/semi': ['error', 'always'],
       semi: 'off',

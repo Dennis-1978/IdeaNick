@@ -3,7 +3,7 @@ import { type Express } from 'express';
 import { TrpcRouter } from '../router';
 import * as trpcExpress from '@trpc/server/adapters/express';
 import { AppContext } from './ctx';
-import { SuperJSON } from 'superjson';
+import superjson from 'superjson';
 import { expressHandler } from 'trpc-playground/handlers/express';
 import { ExpressRequest } from '../utils/types';
 
@@ -19,7 +19,7 @@ type TrpcContext = inferAsyncReturnType<
 >;
 
 export const trpc = initTRPC.context<TrpcContext>().create({
-  transformer: SuperJSON,
+  transformer: superjson,
 });
 
 export const applyTrpcToExpressApp = async (
